@@ -1,0 +1,710 @@
+/* general */
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+:root {
+    --primary: #060606;
+    --secondary: #C1C0C0;
+    --accent: #DFC98E;
+    --text: #f5f5f5;
+    --h2: 20px;
+    --h3: 16px;
+    --h4: 14px;
+}
+
+* {
+    margin: center;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+html {
+    background-color: var(--primary);
+    font-family: 'IM Fell English SC', serif;
+    color: var(--text);
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "contenido"
+        "footer";
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+
+}
+
+h2,
+h3,
+h4 {
+    font-weight: normal;
+    margin: 8px;
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+.textbutton {
+    font-size: var(--h3);
+    line-height: 4px;
+    color: var(--accent);
+    transition-duration: .2s;
+}
+
+.textbutton:hover {
+    text-decoration: underline;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.material-symbols-rounded {
+    color: var(--text);
+    cursor: pointer
+}
+
+#check {
+    display: none;
+}
+
+.hamburguer {
+    display: inline;
+}
+
+#logo {
+    margin-left: 4vw;
+    height: 56px;
+    transition-duration: .2s;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--primary);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    display: grid;
+    grid-template-areas:
+        "logoheader hamburguesa"
+        "secciones secciones"
+    ;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+    transition-duration: .2s;
+}
+
+header a {
+    grid-area: logoheader;
+}
+
+.hamburguer {
+    transition-duration: .2s;
+}
+
+.hamburguer input {
+    grid-area: hamburguesa;
+}
+
+.redes {
+    width: 174px;
+    gap: 12px;
+}
+
+.redes a:hover {
+    border-bottom: 1px solid var(--secondary);
+}
+
+.redes {
+    display: none;
+}
+
+
+.secciones a {
+    font-size: var(--h3);
+    color: var(--text);
+    transition-duration: .2s;
+}
+
+
+.secciones li:hover {
+    text-decoration: underline;
+}
+
+.secciones {
+    grid-area: secciones;
+    position: absolute;
+    width: 100vw;
+    padding: 16px;
+    margin-top: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+}
+
+.secciones {
+    opacity: 0;
+}
+
+#check:checked~.secciones {
+    opacity: 1;
+}
+
+
+
+main {
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+
+}
+
+footer p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+footer {
+    grid-area: footer;
+    width: 100vw;
+    bottom: 0;
+    margin-top: calc(var(--h2)*3);
+    margin-bottom: var(--h4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition-duration: .2s;
+}
+
+/* index */
+
+
+.boxgrad {
+    width: 100%;
+    max-width: 1120px;
+    height: 10%;
+    position: absolute;
+    margin-top: 65%;
+    background: linear-gradient(to top, var(--primary), rgba(0, 0, 0, 0));
+    z-index: 2;
+    transition-duration: .2s;
+}
+
+.portada {
+    display: flex;
+    align-items: center;
+}
+
+#portadaimg {
+    top: 56px;
+    position: relative;
+    width: 100%;
+}
+
+.titleportada {
+    position: absolute;
+    font-size: 14px;
+    top: 7vh;
+    left: 60%;
+    width: 130px;
+    text-shadow: 0 0 8Spx var(--primary);
+    z-index: 2;
+    transition-duration: .2s;
+}
+
+
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.cardvideo iframe {
+    border-radius: 8px;
+    border: 1px solid var(--secondary);
+    width: 80vw;
+    max-width: 930px;
+    max-height: 500px;
+    height: 46vw;
+    transition-duration: .2s;
+}
+
+.cardvideo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.fotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vw;
+}
+
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.titulonos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.contcardmusico {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.cardmusico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.cardmusico img {
+    width: 80vw;
+    border-radius: 8px;
+    border: 1px solid var(--secondary);
+    transition-duration: .2s;
+}
+
+.textcardmusico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.musica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--h2)*2);
+}
+
+.discos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
+
+.carddisco {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carddisco img {
+    width: 80vw;
+    transition-duration: .2s;
+}
+
+.carddisco img:hover {
+    transform: scale(1.05);
+    border-radius: 32px;
+    box-shadow: 0 0 var(--h4) var(--text);
+}
+
+.contshowscontacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--h4)*2);
+}
+
+.contshowscontactochild {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vw;
+    transition-duration: .2s;
+}
+
+.shows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--h2);
+}
+
+.contacto {
+    margin-top: var(--h4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--h3);
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--h3);
+}
+
+.input {
+    background-color: var(--primary);
+    border: none;
+    border-bottom: 1px solid var(--secondary);
+    font-family: 'IM Fell English SC', serif;
+    font-size: var(--h4);
+    color: var(--text);
+}
+
+.button {
+    border: none;
+    background-color: var(--primary);
+    font-family: 'IM Fell English SC', serif;
+    font-size: var(--h3);
+    color: var(--accent);
+}
+
+/* responsive index */
+
+@media screen and (min-width: 600px) {
+
+    header {
+        grid-template-areas:
+            "logoheader secciones"
+        ;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: auto;
+        justify-content: space-between;
+
+    }
+
+    .hamburguer {
+        display: flex;
+    }
+
+    .hamburguer .bar-btn {
+        display: none;
+    }
+
+    .secciones {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        opacity: 1;
+        padding: 0;
+        background-color: var(--primary);
+        gap: 20px;
+
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    .textbutton {
+        font-size: 24px;
+    }
+
+    .titleportada {
+        font-size: 24px;
+        top: 10vh;
+        width: 225px;
+    }
+
+    .discos {
+        flex-direction: row;
+    }
+
+    .carddisco img {
+        width: 40vw;
+        gap: 2vh;
+    }
+
+    .contshowscontactochild {
+        flex-direction: row;
+    }
+
+    footer {
+        flex-direction: row-reverse;
+    }
+
+    #logofooter {
+        height: 56px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    .redesfooter img {
+        width: 24px;
+    }
+
+    .redesfooter {
+        display: flex;
+        justify-content: space-between;
+        gap: 1vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .secciones {
+        gap:24px
+    }
+
+    .titleportada {
+        font-size: 24px;
+        top: 10vh;
+        width: 225px;
+    }
+
+    .contcardmusico {
+        flex-direction: row;
+    }
+
+    .cardmusico img {
+        width: 45vw
+    }
+
+    .discos {
+        flex-direction: row;
+    }
+
+    .carddisco img {
+        width: 40vw;
+        gap: 2vh;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+
+    #logo {
+        height: 80px;
+    }
+
+    header {
+        grid-template-areas:
+            "logoheader secciones redes"
+        ;
+        grid-template-columns: 29% 49% 20%;
+        grid-template-rows: auto;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    #portadaimg {
+        max-width: 1120px;
+    }
+
+    .titleportada {
+        font-size: 32px;
+        top: 10vh;
+        width: 302px;
+        left: 65%;
+    }
+
+    .redes {
+        grid-area: redes;
+        display: flex;
+        gap: 8px;
+    }
+
+    .boxgrad {
+        margin-top: 58vw;
+    }
+    
+    .carddisco img {
+        width: 360px;
+    }
+
+    #logofooter {
+        transition-duration: .2s;
+        height: 56px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    .redesfooter img {
+        width: 24px;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+
+    .secciones {
+        gap: 32px;
+    }
+
+    .secciones a {
+        font-size: 20px;
+    }
+
+    .boxgrad {
+        margin-top: 646px;
+    }
+    
+    .cardmusico img {
+        max-width: 490px;
+    }
+
+    .discos {
+        gap: 80px;
+    }
+
+    .carddisco img {
+        width: 360px;
+    }
+
+    .contshowscontactochild {
+        gap: 260px;
+    }
+
+    #logofooter {
+        height: 80px;
+    }
+
+    footer p {
+        font-size: 18px;
+    }
+
+    .redesfooter img {
+        width: 32px;
+    }
+
+}
+
+/* bio */
+
+.titlepage {
+    margin-top: calc(var(--h4)*3);
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--h2)*3);
+}
+
+.cardbio {
+    display: flex;
+    width: 100vh;
+    gap: calc(var(--h2)*2);
+}
+
+.cardbio p {
+    font-size: var(--h4);
+    word-spacing: 3px;
+    line-height: 2.5;
+    white-space: pre-line;
+}
+
+/* música */
+
+.mainmusica {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--h2)*2);
+}
+
+.contcarddisco {
+    display: flex;
+    gap: calc(var(--h2)*2);
+}
+
+/* shows */
+
+.contshows {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--h2)*2);
+}
+
+.contcardsshows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--h2);
+}
+
+.cardshow {
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* fotos */
+
+.fotosmain {
+    display: flex;
+    flex-direction: column;
+    gap: var(--h3);
+}
+
+.fotosmain img {
+    border-radius: 8px;
+    border: 1px solid var(--secondary);
+}
+
+.fotos2 {
+    display: flex;
+    gap: var(--h3);
+}
+
+.fotos3 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--h3);
+}
+
+/* contacto */
+
+.contactomain {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--h2)*4);
+}
