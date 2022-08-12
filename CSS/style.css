@@ -189,6 +189,7 @@ footer {
     margin-top: calc(var(--h2)*3);
     margin-bottom: var(--h4);
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
