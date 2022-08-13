@@ -111,7 +111,7 @@ header {
     transition-duration: .2s;
 }
 
-header a {
+.logoheader {
     grid-area: logoheader;
 }
 
@@ -119,8 +119,49 @@ header a {
     transition-duration: .2s;
 }
 
-.hamburguer input {
+.hamburguer .hamb {
     grid-area: hamburguesa;
+}
+
+.material-symbols-rounded {
+    display: none;
+}
+
+.bar-btn {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bar-btn #spnT, #spnC, #spnB, #space {
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 3px;
+    transition-duration: .2s;
+    z-index: 4;
+}
+
+.bar-btn #space {
+    background: var(--primary);
+    top: -12px;
+    height: 14px;
+    z-index: 3;
+}
+
+#spnB {
+    top: 0px;
+}
+
+#spnC { 
+    top: -6px;
+}
+
+#spnT {
+    top: -12px;
 }
 
 .redes {
@@ -161,16 +202,24 @@ header a {
     flex-direction: column;
     align-items: center;
     gap: 2vh;
+    transition-duration: 1s;
 }
 
 .secciones {
     opacity: 0;
 }
 
-#check:checked~.secciones {
+#check:checked ~ .secciones {
     opacity: 1;
 }
 
+#check:checked ~ .bar-btn #spnT {
+    top: -6px;
+}
+
+#check:checked ~ .bar-btn #spnB {
+    top: -6px;
+}
 
 
 main {
