@@ -265,7 +265,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
 .contcardmusico {
@@ -490,7 +490,7 @@ footer {
 @media screen and (min-width: 768px) {
 
     .secciones {
-        gap:24px
+        gap: 24px
     }
 
     .titleportada {
@@ -551,7 +551,7 @@ footer {
         display: flex;
         gap: 8px;
     }
-  
+
     .carddisco img {
         width: 300px;
     }
@@ -579,12 +579,17 @@ footer {
 
     }
 
+    .contshows .cardshow {
+        flex-direction: row;
+        width: 790px;
+    }
+
     .fotosmain .fotos2 {
         display: flex;
         flex-direction: row;
         gap: 2vw;
     }
-    
+
     .fotosmain .fotos2 img {
         width: 39vw;
         max-width: 489px;
@@ -606,13 +611,17 @@ footer {
     .secciones a {
         font-size: 20px;
     }
-    
+
     .cardmusico img {
         max-width: 490px;
     }
 
     .carddisco img {
         width: 360px;
+    }
+
+    main .contshows {
+        flex-direction: row;
     }
 
     #logofooter {
@@ -648,10 +657,6 @@ footer {
     max-width: 1000px;
 }
 
-/* .bio .cardbio img {
-    max-width: 495px;
-} */
-
 #cardbio1 {
     display: flex;
     flex-direction: column;
@@ -659,6 +664,7 @@ footer {
     width: 80vw;
     max-width: 1000px;
     gap: 4vh;
+    transition-duration: .2s;
 }
 
 #cardbio2 {
@@ -668,6 +674,7 @@ footer {
     width: 80vw;
     max-width: 1000px;
     gap: 4vh;
+    transition-duration: .2s;
 }
 
 #cardbio1 p {
@@ -675,6 +682,7 @@ footer {
     word-spacing: 3px;
     line-height: 1.8;
     white-space: pre-line;
+    transition-duration: .2s;
 }
 
 #cardbio2 p {
@@ -682,6 +690,7 @@ footer {
     word-spacing: 3px;
     line-height: 1.8;
     white-space: pre-line;
+    transition-duration: .2s;
 }
 
 /* música */
@@ -690,33 +699,36 @@ footer {
     display: flex;
     flex-direction: column;
     gap: calc(var(--h2)*2);
+    transition-duration: .2s;
 }
 
 .contcarddisco {
     display: flex;
     flex-direction: column;
     gap: 12vw;
+    transition-duration: .2s;
 }
 
 /* shows */
 
 .contshows {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: calc(var(--h2)*2);
-}
-
-.contcardsshows {
-    display: flex;
-    flex-direction: column;
-    gap: var(--h2);
+    transition-duration: .9s;
 }
 
 .cardshow {
     display: flex;
-    width: 40vw;
+    flex-direction: column;
+    width: 60vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     justify-content: space-between;
     align-items: center;
+    min-width: 240px;
+    transition-duration: .2s;
 }
 
 .place {
@@ -725,8 +737,9 @@ footer {
     align-items: center;
 }
 
-
-
+.entradas {
+    margin: 3vh;
+}
 
 /* fotos */
 
