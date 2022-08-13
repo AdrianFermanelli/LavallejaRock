@@ -35,7 +35,7 @@ body {
         "footer";
     grid-template-rows: auto auto auto;
     grid-template-columns: auto;
-
+    min-height: 100vh;
 }
 
 h2,
@@ -173,6 +173,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 74vh;
     gap: 5vh;
 
 }
@@ -198,25 +199,14 @@ footer {
 
 /* index */
 
-
-.boxgrad {
-    width: 100%;
-    max-width: 1120px;
-    height: 10%;
-    position: absolute;
-    margin-top: 65%;
-    background: linear-gradient(to top, var(--primary), rgba(0, 0, 0, 0));
-    z-index: 2;
-    transition-duration: .2s;
-}
-
 .portada {
     display: flex;
     align-items: center;
+    margin-top: 56px;
 }
 
 #portadaimg {
-    top: 56px;
+    top: 22px;
     position: relative;
     width: 100%;
 }
@@ -317,7 +307,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4vw;
+    gap: 12vw;
 }
 
 .carddisco {
@@ -328,8 +318,9 @@ footer {
 }
 
 .carddisco img {
-    width: 80vw;
+    width: 60vw;
     transition-duration: .2s;
+    max-width: 300px;
 }
 
 .carddisco img:hover {
@@ -349,7 +340,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6vw;
+    gap: 15vw;
     transition-duration: .2s;
 }
 
@@ -358,6 +349,10 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: var(--h2);
+}
+
+.logoshows {
+    width: 160px;
 }
 
 .contacto {
@@ -447,6 +442,12 @@ footer {
 
     .discos {
         flex-direction: row;
+        gap: 6vw;
+    }
+
+    .mainmusica .contcarddisco {
+        flex-direction: row;
+        gap: 6vw;
     }
 
     .carddisco img {
@@ -456,6 +457,11 @@ footer {
 
     .contshowscontactochild {
         flex-direction: row;
+    }
+
+    main .contactomain {
+        flex-direction: row;
+        gap: 12vw;
     }
 
     footer {
@@ -545,13 +551,9 @@ footer {
         display: flex;
         gap: 8px;
     }
-
-    .boxgrad {
-        margin-top: 58vw;
-    }
-    
+  
     .carddisco img {
-        width: 360px;
+        width: 300px;
     }
 
     #logofooter {
@@ -566,7 +568,34 @@ footer {
     .redesfooter img {
         width: 24px;
     }
+
+    .bio #cardbio1 {
+        flex-direction: row;
+
+    }
+
+    .bio #cardbio2 {
+        flex-direction: row;
+
+    }
+
+    .fotosmain .fotos2 {
+        display: flex;
+        flex-direction: row;
+        gap: 2vw;
+    }
+    
+    .fotosmain .fotos2 img {
+        width: 39vw;
+        max-width: 489px;
+    }
+
+    .fotosmain .fotos3 img {
+        width: 39vw;
+        max-width: 489px;
+    }
 }
+
 
 @media screen and (min-width: 1170px) {
 
@@ -577,25 +606,13 @@ footer {
     .secciones a {
         font-size: 20px;
     }
-
-    .boxgrad {
-        margin-top: 646px;
-    }
     
     .cardmusico img {
         max-width: 490px;
     }
 
-    .discos {
-        gap: 80px;
-    }
-
     .carddisco img {
         width: 360px;
-    }
-
-    .contshowscontactochild {
-        gap: 260px;
     }
 
     #logofooter {
@@ -615,26 +632,55 @@ footer {
 /* bio */
 
 .titlepage {
-    margin-top: calc(var(--h4)*3);
+    margin-top: 10vh;
 }
 
 .bio {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: calc(var(--h2)*3);
+    width: 100vw;
+    gap: 6vh;
 }
 
-.cardbio {
+.bio img {
+    width: 80vw;
+    max-width: 1000px;
+}
+
+/* .bio .cardbio img {
+    max-width: 495px;
+} */
+
+#cardbio1 {
     display: flex;
-    width: 100vh;
-    gap: calc(var(--h2)*2);
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    max-width: 1000px;
+    gap: 4vh;
 }
 
-.cardbio p {
-    font-size: var(--h4);
+#cardbio2 {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 80vw;
+    max-width: 1000px;
+    gap: 4vh;
+}
+
+#cardbio1 p {
+    font-size: var(--h3);
     word-spacing: 3px;
-    line-height: 2.5;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+#cardbio2 p {
+    font-size: var(--h3);
+    word-spacing: 3px;
+    line-height: 1.8;
     white-space: pre-line;
 }
 
@@ -648,7 +694,8 @@ footer {
 
 .contcarddisco {
     display: flex;
-    gap: calc(var(--h2)*2);
+    flex-direction: column;
+    gap: 12vw;
 }
 
 /* shows */
@@ -678,34 +725,52 @@ footer {
     align-items: center;
 }
 
+
+
+
 /* fotos */
 
 .fotosmain {
     display: flex;
     flex-direction: column;
-    gap: var(--h3);
+    align-items: center;
+    gap: 2vh;
+    width: 100vw;
 }
 
 .fotosmain img {
     border-radius: 8px;
     border: 1px solid var(--secondary);
+    width: 80vw;
+    max-width: 1000px;
 }
 
 .fotos2 {
     display: flex;
-    gap: var(--h3);
+    flex-direction: column;
+    gap: 2vw;
+    width: 80vw;
+    max-width: 1000px;
 }
+
 
 .fotos3 {
     display: flex;
     flex-direction: column;
-    gap: var(--h3);
+    gap: 2vh;
+    width: 80vw;
 }
+
 
 /* contacto */
 
 .contactomain {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
-    gap: calc(var(--h2)*4);
+    gap: 6vh;
+}
+
+.contactomain img {
+    width: 160px;
 }
