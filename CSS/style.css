@@ -372,12 +372,23 @@ footer {
 
 .carddisco img {
     width: 60vw;
-    transition-duration: .2s;
+    transition-duration: .4s;
+    animation-name: discoshow;
+    animation-duration: .8s;
+    animation-delay: 3s;
     max-width: 300px;
 }
 
+@keyframes discoshow {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(2deg);}
+    50% {transform: rotate(0deg);}
+    75% {transform: rotate(-2deg);}
+    100% {transform: rotate(0deg);}
+}
+
 .carddisco img:hover {
-    transform: scale(1.05);
+    transform: scale(1.10);
     border-radius: 32px;
     box-shadow: 0 0 var(--h4) var(--text);
 }
