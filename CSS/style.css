@@ -110,8 +110,10 @@ header {
     ;
     grid-template-columns: 82% 18%;
     grid-template-rows: auto auto;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    max-width: 1280px;
+    margin-right: auto;
     z-index: 4;
     transition-duration: .2s;
     font-family: 'IM Fell English SC', serif;
@@ -248,18 +250,26 @@ footer p {
 footer {
     grid-area: footer;
     background-color: var(--primary);
-    width: 100vw;
     bottom: 0;
     padding-top: calc(var(--h2)*3);
-    margin-bottom: var(--h4);
-    display: flex;
+    padding-bottom: var(--h4);
+    /* display: flex;
     position: relative;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: center; */
     transition-duration: .2s;
     font-family: 'IM Fell English SC', serif;
     color: var(--text);
+}
+
+#flexcolumn {
+    display: block;
+}
+
+#flexrow {
+    max-width: 1280px;
+    display: none;
 }
 
 /* index */
@@ -489,9 +499,14 @@ footer {
         position: relative;
         opacity: 1;
         padding: 0;
+        margin-top: 1rem;
         background-color: var(--primary);
         gap: 20px;
 
+    }
+
+    .secciones a {
+        font-size: var(--h3);
     }
 
     h2 {
@@ -540,10 +555,21 @@ footer {
         gap: 12vw;
     }
 
-    footer {
+    /* footer {
+        display: flex;
         flex-direction: row-reverse;
+    } */
+
+    #flexcolumn {
+        display: none;
     }
 
+    #flexrow {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
     #logofooter {
         height: 56px;
     }
@@ -680,6 +706,11 @@ footer {
 
 @media screen and (min-width: 1170px) {
 
+        
+    header {
+        margin-left: 4vw;
+    }
+    
     .secciones {
         gap: 32px;
     }
@@ -862,4 +893,12 @@ footer {
 
 .contactomain img {
     width: 160px;
+}
+
+@media screen and (min-width: 1440px) {
+    
+    header {
+        margin-left: 14vw;
+    }
+    
 }
