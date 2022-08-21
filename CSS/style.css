@@ -20,12 +20,6 @@
 }
 
 
-html {
-    background-color: var(--primary);
-    font-family: 'IM Fell English SC', serif;
-    color: var(--text);
-}
-
 body {
     display: grid;
     grid-template-areas:
@@ -35,6 +29,7 @@ body {
     grid-template-rows: auto auto auto;
     grid-template-columns: auto;
     min-height: 100vh;
+    background-color: var(--primary);
 }
 
 h2,
