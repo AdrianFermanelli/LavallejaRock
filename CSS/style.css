@@ -258,14 +258,14 @@ footer {
     color: var(--text);
 }
 
-#flexcolumn {
-    display: block;
-}
+/* #flexcolumn {
+    gap: 400px;
+} */
 
-#flexrow {
+/* #flexrow {
     max-width: 1280px;
     display: none;
-}
+} */
 
 /* index */
 
@@ -554,7 +554,7 @@ footer {
         display: flex;
         flex-direction: row-reverse;
     } */
-
+/* 
     #flexcolumn {
         display: none;
     }
@@ -563,7 +563,7 @@ footer {
         display: block;
         margin-left: auto;
         margin-right: auto;
-    }
+    } */
   
     #logofooter {
         height: 56px;
