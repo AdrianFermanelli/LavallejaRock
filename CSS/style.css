@@ -64,7 +64,7 @@ h4 {
 }
 
 .textbutton:hover {
-    color:var(--accent);
+    color: var(--accent);
     text-decoration: underline;
 }
 
@@ -103,11 +103,10 @@ header {
         "logoheader hamburguesa"
         "secciones secciones"
     ;
-    grid-template-columns: 82% 18%;
+    grid-template-columns: 82% 11%;
     grid-template-rows: auto auto;
     justify-content: space-around;
     align-items: center;
-    max-width: 1280px;
     margin-right: auto;
     z-index: 4;
     transition-duration: .2s;
@@ -138,7 +137,10 @@ header {
     cursor: pointer;
 }
 
-.bar-btn #spnT, #spnC, #spnB, #space {
+.bar-btn #spnT,
+#spnC,
+#spnB,
+#space {
     position: absolute;
     content: '';
     width: 24px;
@@ -160,7 +162,7 @@ header {
     top: 18px;
 }
 
-#spnC { 
+#spnC {
     top: 12px;
 }
 
@@ -212,15 +214,15 @@ header {
     display: none;
 }
 
-#check:checked ~ .secciones {
+#check:checked~.secciones {
     display: flex;
 }
 
-#check:checked ~ .bar-btn #spnT {
+#check:checked~.bar-btn #spnT {
     top: 12px;
 }
 
-#check:checked ~ .bar-btn #spnB {
+#check:checked~.bar-btn #spnB {
     top: 12px;
 }
 
@@ -248,24 +250,16 @@ footer {
     bottom: 0;
     padding-top: calc(var(--h2)*3);
     padding-bottom: var(--h4);
-    /* display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center; */
     transition-duration: .2s;
     font-family: 'IM Fell English SC', serif;
     color: var(--text);
 }
 
-/* #flexcolumn {
-    gap: 400px;
-} */
-
-/* #flexrow {
+#flexwrapbs {
     max-width: 1280px;
-    display: none;
-} */
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* index */
 
@@ -397,11 +391,25 @@ footer {
 }
 
 @keyframes discoshow {
-    0% {transform: rotate(0deg);}
-    25% {transform: rotate(2deg);}
-    50% {transform: rotate(0deg);}
-    75% {transform: rotate(-2deg);}
-    100% {transform: rotate(0deg);}
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(2deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .carddisco img:hover {
@@ -550,21 +558,6 @@ footer {
         gap: 12vw;
     }
 
-    /* footer {
-        display: flex;
-        flex-direction: row-reverse;
-    } */
-/* 
-    #flexcolumn {
-        display: none;
-    }
-
-    #flexrow {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    } */
-  
     #logofooter {
         height: 56px;
     }
@@ -701,11 +694,10 @@ footer {
 
 @media screen and (min-width: 1170px) {
 
-        
     header {
-        margin-left: 4vw;
+        grid-template-columns: 26% 49% 13%;
     }
-    
+
     .secciones {
         gap: 32px;
     }
@@ -891,9 +883,9 @@ footer {
 }
 
 @media screen and (min-width: 1440px) {
-    
+
     header {
-        margin-left: 14vw;
+        grid-template-columns: 10% 26% 10%;
     }
-    
+
 }
