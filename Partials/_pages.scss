@@ -1,0 +1,156 @@
+/* bio */
+
+.titlepage {
+    margin-top: 10vh;
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    gap: 6vh;
+
+    #cardbio1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80vw;
+        max-width: 1000px;
+        gap: 4vh;
+        transition-duration: .2s;
+
+        p {
+            font-size: var(--h3);
+            word-spacing: 3px;
+            line-height: 1.8;
+            white-space: pre-line;
+            transition-duration: .2s;
+        }
+    }
+    
+    #cardbio2 {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 80vw;
+        max-width: 1000px;
+        gap: 4vh;
+        transition-duration: .2s;
+
+        p {
+            font-size: var(--h3);
+            word-spacing: 3px;
+            line-height: 1.8;
+            white-space: pre-line;
+            transition-duration: .2s;
+        }
+    }
+
+    img {
+        width: 80vw;
+        max-width: 1000px;
+    }
+}
+
+
+/* música */
+
+.mainmusica {
+    display: flex;
+    flex-direction: column;
+    gap: calc($h2*2);
+    transition-duration: .2s;
+
+    .contcarddisco {
+        display: flex;
+        flex-direction: column;
+        gap: 12vw;
+        transition-duration: .2s;
+    }    
+
+}
+
+
+/* shows */
+
+.contshows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc($h2*2);
+    transition-duration: .9s;
+
+    .cardshow {
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 240px;
+        transition-duration: .2s;
+
+        .place {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .entradas {
+            margin: 3vh;
+        }
+    }
+    
+}
+
+
+
+/* fotos */
+
+.fotosmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    width: 100vw;
+    img {
+        border-radius: 8px;
+        border: 1px solid $secondary;
+        width: 80vw;
+        max-width: 1000px;
+    }
+    
+    .fotos2 {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        width: 80vw;
+        max-width: 1000px;
+    }
+    
+    
+    .fotos3 {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        width: 80vw;
+    }
+}
+
+
+
+
+/* contacto */
+
+.contactomain {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 6vh;
+
+    img {
+        width: 160px;
+    }
+}

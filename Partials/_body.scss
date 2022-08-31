@@ -1,0 +1,54 @@
+@import "../Partials/colors", "../Partials/sizes";
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "contenido"
+        "footer";
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    min-height: 100vh;
+    background-color: $primary;
+
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        margin: 8px;
+    }
+
+    h2 {
+        font-size: $h2;
+    }
+
+    h3 {
+        font-size: $h3;
+    }
+
+    h4 {
+        font-size: $h4;
+    }
+}
+
+
+.button {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.textbutton {
+    font-size: $h3;
+    line-height: 4px;
+    color: $accent;
+    transition-duration: .2s;
+    text-decoration: none;
+
+    &:hover {
+        color: $accent;
+        text-decoration: underline;
+    }
+}

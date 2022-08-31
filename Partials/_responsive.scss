@@ -1,0 +1,313 @@
+/* responsive index */
+
+@media screen and (min-width: 600px) {
+
+    header {
+        grid-template-areas:
+            "logoheader secciones"
+        ;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: auto;
+        justify-content: space-between;
+
+        .secciones {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            opacity: 1;
+            padding: 0;
+            margin-top: 1rem;
+            background-color: $primary;
+            gap: 20px;
+
+            a {
+                font-size: $h3;
+            }
+
+        }
+    }
+
+    .hamburguer {
+        display: flex;
+
+        & .bar-btn {
+            display: none;
+        }
+    }
+
+    body {
+
+        h2 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        .textbutton {
+            font-size: 24px;
+        }
+    }
+
+
+
+    //  index
+
+    .portada .titleportada {
+        font-size: 24px;
+        top: 10vh;
+        width: 225px;
+    }
+
+    .musica {
+        .discos {
+        flex-direction: row;
+        gap: 6vw;
+
+            .carddisco img {
+                width: 40vw;
+                gap: 2vh;
+            }
+        }
+    }
+
+    // música
+    .mainmusica {
+
+        .contcarddisco {
+        flex-direction: row;
+        gap: 6vw;
+        }
+
+        .carddisco img {
+            width: 40vw;
+            gap: 2vh;
+        }
+    }
+
+    // contacto
+
+    .contshowscontacto .contshowscontactochild {
+        flex-direction: row;
+    }
+
+    main .contactomain {
+        flex-direction: row;
+        gap: 12vw;
+    }
+
+    footer {
+
+        #logofooter {
+            height: 56px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+
+         .redesfooter {
+            display: flex;
+            justify-content: space-between;
+            gap: 1vh;
+
+            img {
+                width: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    header .secciones {
+        gap: 24px
+    }
+
+    .portada .titleportada {
+        font-size: 24px;
+        top: 10vh;
+        width: 225px;
+    }
+
+    .fotos {
+        .nosotros .contcardmusico {
+            flex-direction: row;
+
+            .cardmusico img {
+                width: 45vw
+            }
+        }
+
+
+    }
+
+    .musica .discos {
+        flex-direction: row;
+
+        .carddisco img {
+            width: 40vw;
+            gap: 2vh;
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 900px) {
+
+
+
+    header {
+        grid-template-areas:
+            "logoheader secciones redes"
+        ;
+        grid-template-columns: 29% 49% 20%;
+        grid-template-rows: auto;
+        justify-content: space-evenly;
+        align-items: center;
+
+        #logo {
+            height: 80px;
+        }
+
+        .redes {
+            grid-area: redes;
+            display: flex;
+            gap: 8px;
+        }
+    }
+
+    // index
+
+    .portada {
+
+        .titleportada {
+        font-size: 32px;
+        top: 10vh;
+        width: 302px;
+        left: 65%;
+        }
+
+        #portadaimg {
+            max-width: 1120px;
+        }
+    }
+
+
+    .carddisco img {
+        width: 300px;
+    }
+
+    // footer
+    footer {
+        #logofooter {
+            transition-duration: .2s;
+            height: 56px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        .redesfooter img {
+            width: 24px;
+        }
+    }
+
+    // bio
+
+    .bio #cardbio1 {
+        flex-direction: row;
+
+    }
+
+    .bio #cardbio2 {
+        flex-direction: row;
+
+    }
+
+    // shows
+
+    .contshows .cardshow {
+        flex-direction: row;
+        width: 790px;
+    }
+
+    // fotos
+
+    .fotosmain .fotos2 {
+        display: flex;
+        flex-direction: row;
+        gap: 2vw;
+    }
+
+    .fotosmain .fotos2 img {
+        width: 39vw;
+        max-width: 489px;
+    }
+
+    .fotosmain .fotos3 img {
+        width: 39vw;
+        max-width: 489px;
+    }
+}
+
+
+@media screen and (min-width: 1170px) {
+
+    header {
+        grid-template-columns: 26% 49% 13%;
+
+        .secciones {
+            gap: 32px;
+
+            a {
+                font-size: 20px;
+            }
+        }
+
+    }
+
+    .fotos .nosotros .contcardmusico .cardmusico img {
+        max-width: 490px;
+    }
+
+    .carddisco img {
+        width: 360px;
+    }
+
+    main .contshows {
+        flex-direction: row;
+    }
+
+    footer{
+
+        #logofooter {
+            height: 80px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .redesfooter img {
+            width: 32px;
+    }
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+
+    header {
+        grid-template-columns: 10% 26% 10%;
+    }
+
+}

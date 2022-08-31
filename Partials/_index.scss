@@ -1,0 +1,222 @@
+/* index */
+
+.portada {
+    display: flex;
+    align-items: center;
+    margin-top: 56px;
+
+    #portadaimg {
+        top: $h2;
+        position: relative;
+        width: 100%;
+    }
+
+    .titleportada {
+        position: absolute;
+        font-size: 14px;
+        top: 7vh;
+        left: 60%;
+        width: 130px;
+        text-shadow: 0 0 8Spx $primary;
+        z-index: 2;
+        transition-duration: .2s;
+    }
+}
+
+
+
+
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.cardvideo iframe {
+    border-radius: 8px;
+    border: 1px solid $text;
+    width: 80vw;
+    max-width: 930px;
+    max-height: 500px;
+    height: 46vw;
+    transition-duration: .2s;
+}
+
+.cardvideo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gapcard;
+}
+
+
+
+
+
+.fotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vw;
+
+    .nosotros {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $gapcard;
+
+        .titulonos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contcardmusico {
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+
+            .cardmusico {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: $gapcard;
+
+                img {
+                    width: 80vw;
+                    border-radius: 8px;
+                    border: 1px solid $text;
+                    transition-duration: .2s;
+                }
+
+                .textcardmusico {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+.musica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc($h2*2);
+
+    .discos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12vw;
+    }
+}
+
+.carddisco {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: $h3;
+
+    img {
+        width: 60vw;
+        transition-duration: .4s;
+        animation-name: discoshow;
+        animation-duration: .8s;
+        animation-delay: 3s;
+        max-width: 300px;
+
+        &:hover {
+            transform: scale(1.10);
+            border-radius: 32px;
+            box-shadow: 0 0 $h4 $text;
+        }
+    }
+}
+
+
+
+@keyframes discoshow {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(2deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+.contshowscontacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc($h4*2);
+
+    .contshowscontactochild {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15vw;
+        transition-duration: .2s;
+
+        .shows {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $h2;
+
+            .logoshows {
+                width: 160px;
+            }
+        }
+    }
+}
+
+.contacto {
+    margin-top: $h4;
+    display: flex;
+    flex-direction: column;
+    gap: $h3;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: $h3;
+
+        .input {
+            background-color: $primary;
+            border: none;
+            border-bottom: 1px solid $secondary;
+            font-family: 'IM Fell English SC', serif;
+            font-size: $h4;
+            color: $text;
+        }
+
+        .button {
+            border: none;
+            background-color: $primary;
+            font-family: 'IM Fell English SC', serif;
+            font-size: $h3;
+            color: $accent;
+        }
+    }
+
+}

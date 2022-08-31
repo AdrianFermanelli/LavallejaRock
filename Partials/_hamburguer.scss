@@ -1,0 +1,61 @@
+.hamburguer {
+    grid-area: hamburguesa;
+    display: inline;
+    transition-duration: .2s;
+
+    #check {
+        display: none;
+
+        &:checked~.secciones {
+            display: flex;
+        }
+
+        &:checked~.bar-btn #spnT {
+            top: 12px;
+        }
+
+        &:checked~.bar-btn #spnB {
+            top: 12px;
+        }
+    }
+
+    .bar-btn {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        cursor: pointer;
+
+        #spnT,
+        #spnC,
+        #spnB,
+        #space {
+            position: absolute;
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: $text;
+            border-radius: 3px;
+            transition-duration: .2s;
+            z-index: 4;
+        }
+
+        #space {
+            background-color: $primary;
+            top: 6px;
+            height: 14px;
+            z-index: 3;
+        }
+
+        #spnB {
+            top: 18px;
+        }
+
+        #spnC {
+            top: 12px;
+        }
+
+        #spnT {
+            top: 6px;
+        }
+    }
+}

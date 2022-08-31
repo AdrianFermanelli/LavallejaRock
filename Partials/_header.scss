@@ -1,0 +1,71 @@
+@import "../Partials/hamburguer";
+
+header {
+    grid-area: header;
+    background-color: $primary;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    display: grid;
+    grid-template-areas:
+        "logoheader hamburguesa"
+        "secciones secciones"
+    ;
+    grid-template-columns: 82% 11%;
+    grid-template-rows: auto auto;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: auto;
+    z-index: 4;
+    transition-duration: .2s;
+    font-family: 'IM Fell English SC', serif;
+    color: $text;
+
+    .logoheader {
+        grid-area: logoheader;
+    }
+    
+    #logo {
+        margin-left: 4vw;
+        height: 56px;
+        transition-duration: .2s;
+    }
+    
+    .secciones {
+        grid-area: secciones;
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        padding: $h4;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+        display: none;
+    
+        a {
+            font-size: $h2;
+            color: $text;
+            text-decoration: none;
+            transition-duration: .2s;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .redes {
+        width: 174px;
+        gap: 12px;
+        display: none;
+    
+        & a:hover {
+            border-bottom: 1px solid $secondary;
+        }
+    }
+}
+

@@ -1,891 +1,742 @@
+@charset "UTF-8";
 /* general */
-
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
-
-:root {
-    --primary: #060606;
-    --secondary: #C1C0C0;
-    --accent: #DFC98E;
-    --text: #f5f5f5;
-    --h2: 22px;
-    --h3: 18px;
-    --h4: 16px;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap");
 * {
-    margin: center;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
+  margin: center;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
-
-body {
-    display: grid;
-    grid-template-areas:
-        "header"
-        "contenido"
-        "footer";
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto;
-    min-height: 100vh;
-    background-color: var(--primary);
-}
-
-h2,
-h3,
-h4 {
-    font-weight: normal;
-    margin: 8px;
-}
-
-h2 {
-    font-size: var(--h2);
-}
-
-h3 {
-    font-size: var(--h3);
-}
-
-h4 {
-    font-size: var(--h4);
-}
-
-.button {
-    text-decoration: none;
-}
-
-.textbutton {
-    font-size: var(--h3);
-    line-height: 4px;
-    color: var(--accent);
-    transition-duration: .2s;
-    text-decoration: none;
-}
-
-.textbutton:hover {
-    color: var(--accent);
-    text-decoration: underline;
-}
-
-.button:hover {
-    text-decoration: underline;
-}
-
-.material-symbols-rounded {
-    color: var(--text);
-    cursor: pointer
-}
-
-#check {
-    display: none;
+main {
+  background-color: #060606;
+  grid-area: contenido;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 74vh;
+  gap: 5vh;
+  font-family: "IM Fell English SC", serif;
+  color: #f5f5f5;
 }
 
 .hamburguer {
-    display: inline;
+  grid-area: hamburguesa;
+  display: inline;
+  transition-duration: 0.2s;
 }
-
-#logo {
-    margin-left: 4vw;
-    height: 56px;
-    transition-duration: .2s;
+.hamburguer #check {
+  display: none;
+}
+.hamburguer #check:checked ~ .secciones {
+  display: flex;
+}
+.hamburguer #check:checked ~ .bar-btn #spnT {
+  top: 12px;
+}
+.hamburguer #check:checked ~ .bar-btn #spnB {
+  top: 12px;
+}
+.hamburguer .bar-btn {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+.hamburguer .bar-btn #spnT,
+.hamburguer .bar-btn #spnC,
+.hamburguer .bar-btn #spnB,
+.hamburguer .bar-btn #space {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: #f5f5f5;
+  border-radius: 3px;
+  transition-duration: 0.2s;
+  z-index: 4;
+}
+.hamburguer .bar-btn #space {
+  background-color: #060606;
+  top: 6px;
+  height: 14px;
+  z-index: 3;
+}
+.hamburguer .bar-btn #spnB {
+  top: 18px;
+}
+.hamburguer .bar-btn #spnC {
+  top: 12px;
+}
+.hamburguer .bar-btn #spnT {
+  top: 6px;
 }
 
 header {
-    grid-area: header;
-    background-color: var(--primary);
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: auto;
-    display: grid;
-    grid-template-areas:
-        "logoheader hamburguesa"
-        "secciones secciones"
-    ;
-    grid-template-columns: 82% 11%;
-    grid-template-rows: auto auto;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: auto;
-    z-index: 4;
-    transition-duration: .2s;
-    font-family: 'IM Fell English SC', serif;
-    color: var(--text);
+  grid-area: header;
+  background-color: #060606;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  display: grid;
+  grid-template-areas: "logoheader hamburguesa" "secciones secciones";
+  grid-template-columns: 82% 11%;
+  grid-template-rows: auto auto;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: auto;
+  z-index: 4;
+  transition-duration: 0.2s;
+  font-family: "IM Fell English SC", serif;
+  color: #f5f5f5;
+}
+header .logoheader {
+  grid-area: logoheader;
+}
+header #logo {
+  margin-left: 4vw;
+  height: 56px;
+  transition-duration: 0.2s;
+}
+header .secciones {
+  grid-area: secciones;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+  display: none;
+}
+header .secciones a {
+  font-size: 22px;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+header .secciones a:hover {
+  text-decoration: underline;
+}
+header .redes {
+  width: 174px;
+  gap: 12px;
+  display: none;
+}
+header .redes a:hover {
+  border-bottom: 1px solid #C1C0C0;
 }
 
-.logoheader {
-    grid-area: logoheader;
+body {
+  display: grid;
+  grid-template-areas: "header" "contenido" "footer";
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto;
+  min-height: 100vh;
+  background-color: #060606;
 }
-
-.hamburguer {
-    transition-duration: .2s;
+body h2,
+body h3,
+body h4 {
+  font-weight: normal;
+  margin: 8px;
 }
-
-.hamburguer .hamb {
-    grid-area: hamburguesa;
+body h2 {
+  font-size: 22px;
 }
-
-.material-symbols-rounded {
-    display: none;
+body h3 {
+  font-size: 18px;
 }
-
-.bar-btn {
-    width: 24px;
-    height: 24px;
-    position: relative;
-    cursor: pointer;
-}
-
-.bar-btn #spnT,
-#spnC,
-#spnB,
-#space {
-    position: absolute;
-    content: '';
-    width: 24px;
-    height: 2px;
-    background: var(--text);
-    border-radius: 3px;
-    transition-duration: .2s;
-    z-index: 4;
-}
-
-.bar-btn #space {
-    background: var(--primary);
-    top: 6px;
-    height: 14px;
-    z-index: 3;
-}
-
-#spnB {
-    top: 18px;
-}
-
-#spnC {
-    top: 12px;
-}
-
-#spnT {
-    top: 6px;
-}
-
-.redes {
-    width: 174px;
-    gap: 12px;
-}
-
-.redes a:hover {
-    border-bottom: 1px solid var(--secondary);
-}
-
-.redes {
-    display: none;
-}
-
-
-.secciones a {
-    font-size: var(--h2);
-    color: var(--text);
-    text-decoration: none;
-    transition-duration: .2s;
-}
-
-
-.secciones li:hover {
-    text-decoration: underline;
-}
-
-.secciones {
-    grid-area: secciones;
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-}
-
-.secciones {
-    display: none;
-}
-
-#check:checked~.secciones {
-    display: flex;
-}
-
-#check:checked~.bar-btn #spnT {
-    top: 12px;
-}
-
-#check:checked~.bar-btn #spnB {
-    top: 12px;
-}
-
-
-main {
-    background-color: var(--primary);
-    grid-area: contenido;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 74vh;
-    gap: 5vh;
-    font-family: 'IM Fell English SC', serif;
-    color: var(--text);
-}
-
-footer p {
-    margin-top: 16px;
-    margin-bottom: 16px;
-}
-
-footer {
-    grid-area: footer;
-    background-color: var(--primary);
-    bottom: 0;
-    padding-top: calc(var(--h2)*3);
-    padding-bottom: var(--h4);
-    transition-duration: .2s;
-    font-family: 'IM Fell English SC', serif;
-    color: var(--text);
-}
-
-#flexwrapbs {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* index */
-
-.portada {
-    display: flex;
-    align-items: center;
-    margin-top: 56px;
-}
-
-#portadaimg {
-    top: 22px;
-    position: relative;
-    width: 100%;
-}
-
-.titleportada {
-    position: absolute;
-    font-size: 14px;
-    top: 7vh;
-    left: 60%;
-    width: 130px;
-    text-shadow: 0 0 8Spx var(--primary);
-    z-index: 2;
-    transition-duration: .2s;
-}
-
-
-.video {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-}
-
-.cardvideo iframe {
-    border-radius: 8px;
-    border: 1px solid var(--secondary);
-    width: 80vw;
-    max-width: 930px;
-    max-height: 500px;
-    height: 46vw;
-    transition-duration: .2s;
-}
-
-.cardvideo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-}
-
-.fotos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6vw;
-}
-
-.nosotros {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-}
-
-.titulonos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.contcardmusico {
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-}
-
-.cardmusico {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-}
-
-.cardmusico img {
-    width: 80vw;
-    border-radius: 8px;
-    border: 1px solid var(--secondary);
-    transition-duration: .2s;
-}
-
-.textcardmusico {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.musica {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: calc(var(--h2)*2);
-}
-
-.discos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12vw;
-}
-
-.carddisco {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.carddisco img {
-    width: 60vw;
-    transition-duration: .4s;
-    animation-name: discoshow;
-    animation-duration: .8s;
-    animation-delay: 3s;
-    max-width: 300px;
-}
-
-@keyframes discoshow {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(2deg);
-    }
-
-    50% {
-        transform: rotate(0deg);
-    }
-
-    75% {
-        transform: rotate(-2deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.carddisco img:hover {
-    transform: scale(1.10);
-    border-radius: 32px;
-    box-shadow: 0 0 var(--h4) var(--text);
-}
-
-.contshowscontacto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: calc(var(--h4)*2);
-}
-
-.contshowscontactochild {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15vw;
-    transition-duration: .2s;
-}
-
-.shows {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--h2);
-}
-
-.logoshows {
-    width: 160px;
-}
-
-.contacto {
-    margin-top: var(--h4);
-    display: flex;
-    flex-direction: column;
-    gap: var(--h3);
-}
-
-.contacto form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--h3);
-}
-
-.input {
-    background-color: var(--primary);
-    border: none;
-    border-bottom: 1px solid var(--secondary);
-    font-family: 'IM Fell English SC', serif;
-    font-size: var(--h4);
-    color: var(--text);
+body h4 {
+  font-size: 16px;
 }
 
 .button {
-    border: none;
-    background-color: var(--primary);
-    font-family: 'IM Fell English SC', serif;
-    font-size: var(--h3);
-    color: var(--accent);
+  text-decoration: none;
+}
+.button:hover {
+  text-decoration: underline;
 }
 
-/* responsive index */
-
-@media screen and (min-width: 600px) {
-
-    header {
-        grid-template-areas:
-            "logoheader secciones"
-        ;
-        grid-template-columns: 30% 70%;
-        grid-template-rows: auto;
-        justify-content: space-between;
-
-    }
-
-    .hamburguer {
-        display: flex;
-    }
-
-    .hamburguer .bar-btn {
-        display: none;
-    }
-
-    .secciones {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        opacity: 1;
-        padding: 0;
-        margin-top: 1rem;
-        background-color: var(--primary);
-        gap: 20px;
-
-    }
-
-    .secciones a {
-        font-size: var(--h3);
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    h3 {
-        font-size: 24px;
-    }
-
-    h4 {
-        font-size: 16px;
-    }
-
-    .textbutton {
-        font-size: 24px;
-    }
-
-    .titleportada {
-        font-size: 24px;
-        top: 10vh;
-        width: 225px;
-    }
-
-    .discos {
-        flex-direction: row;
-        gap: 6vw;
-    }
-
-    .mainmusica .contcarddisco {
-        flex-direction: row;
-        gap: 6vw;
-    }
-
-    .carddisco img {
-        width: 40vw;
-        gap: 2vh;
-    }
-
-    .contshowscontactochild {
-        flex-direction: row;
-    }
-
-    main .contactomain {
-        flex-direction: row;
-        gap: 12vw;
-    }
-
-    #logofooter {
-        height: 56px;
-    }
-
-    footer p {
-        font-size: 14px;
-    }
-
-    .redesfooter img {
-        width: 24px;
-    }
-
-    .redesfooter {
-        display: flex;
-        justify-content: space-between;
-        gap: 1vh;
-    }
+.textbutton {
+  font-size: 18px;
+  line-height: 4px;
+  color: #DFC98E;
+  transition-duration: 0.2s;
+  text-decoration: none;
+}
+.textbutton:hover {
+  color: #DFC98E;
+  text-decoration: underline;
 }
 
-@media screen and (min-width: 768px) {
-
-    .secciones {
-        gap: 24px
-    }
-
-    .titleportada {
-        font-size: 24px;
-        top: 10vh;
-        width: 225px;
-    }
-
-    .contcardmusico {
-        flex-direction: row;
-    }
-
-    .cardmusico img {
-        width: 45vw
-    }
-
-    .discos {
-        flex-direction: row;
-    }
-
-    .carddisco img {
-        width: 40vw;
-        gap: 2vh;
-    }
-
+footer p {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
-@media screen and (min-width: 900px) {
-
-    #logo {
-        height: 80px;
-    }
-
-    header {
-        grid-template-areas:
-            "logoheader secciones redes"
-        ;
-        grid-template-columns: 29% 49% 20%;
-        grid-template-rows: auto;
-        justify-content: space-evenly;
-        align-items: center;
-
-    }
-
-    #portadaimg {
-        max-width: 1120px;
-    }
-
-    .titleportada {
-        font-size: 32px;
-        top: 10vh;
-        width: 302px;
-        left: 65%;
-    }
-
-    .redes {
-        grid-area: redes;
-        display: flex;
-        gap: 8px;
-    }
-
-    .carddisco img {
-        width: 300px;
-    }
-
-    #logofooter {
-        transition-duration: .2s;
-        height: 56px;
-    }
-
-    footer p {
-        font-size: 14px;
-    }
-
-    .redesfooter img {
-        width: 24px;
-    }
-
-    .bio #cardbio1 {
-        flex-direction: row;
-
-    }
-
-    .bio #cardbio2 {
-        flex-direction: row;
-
-    }
-
-    .contshows .cardshow {
-        flex-direction: row;
-        width: 790px;
-    }
-
-    .fotosmain .fotos2 {
-        display: flex;
-        flex-direction: row;
-        gap: 2vw;
-    }
-
-    .fotosmain .fotos2 img {
-        width: 39vw;
-        max-width: 489px;
-    }
-
-    .fotosmain .fotos3 img {
-        width: 39vw;
-        max-width: 489px;
-    }
+footer {
+  grid-area: footer;
+  background-color: #060606;
+  bottom: 0;
+  padding-top: 66px;
+  padding-bottom: 16px;
+  transition-duration: 0.2s;
+  font-family: "IM Fell English SC", serif;
+  color: #f5f5f5;
+}
+footer p {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+footer #flexwrapbs {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* index */
+.portada {
+  display: flex;
+  align-items: center;
+  margin-top: 56px;
+}
+.portada #portadaimg {
+  top: 22px;
+  position: relative;
+  width: 100%;
+}
+.portada .titleportada {
+  position: absolute;
+  font-size: 14px;
+  top: 7vh;
+  left: 60%;
+  width: 130px;
+  text-shadow: 0 0 8Spx #060606;
+  z-index: 2;
+  transition-duration: 0.2s;
+}
 
-@media screen and (min-width: 1170px) {
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
 
-    header {
-        grid-template-columns: 26% 49% 13%;
-    }
+.cardvideo iframe {
+  border-radius: 8px;
+  border: 1px solid #f5f5f5;
+  width: 80vw;
+  max-width: 930px;
+  max-height: 500px;
+  height: 46vw;
+  transition-duration: 0.2s;
+}
 
-    .secciones {
-        gap: 32px;
-    }
+.cardvideo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
 
-    .secciones a {
-        font-size: 20px;
-    }
+.fotos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6vw;
+}
+.fotos .nosotros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+.fotos .nosotros .titulonos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fotos .nosotros .contcardmusico {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+.fotos .nosotros .contcardmusico .cardmusico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+.fotos .nosotros .contcardmusico .cardmusico img {
+  width: 80vw;
+  border-radius: 8px;
+  border: 1px solid #f5f5f5;
+  transition-duration: 0.2s;
+}
+.fotos .nosotros .contcardmusico .cardmusico .textcardmusico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .cardmusico img {
-        max-width: 490px;
-    }
+.musica {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+}
+.musica .discos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12vw;
+}
 
-    .carddisco img {
-        width: 360px;
-    }
+.carddisco {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.carddisco img {
+  width: 60vw;
+  transition-duration: 0.4s;
+  -webkit-animation-name: discoshow;
+          animation-name: discoshow;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  max-width: 300px;
+}
+.carddisco img:hover {
+  transform: scale(1.1);
+  border-radius: 32px;
+  box-shadow: 0 0 16px #f5f5f5;
+}
 
-    main .contshows {
-        flex-direction: row;
-    }
+@-webkit-keyframes discoshow {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
-    #logofooter {
-        height: 80px;
-    }
+@keyframes discoshow {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.contshowscontacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.contshowscontacto .contshowscontactochild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15vw;
+  transition-duration: 0.2s;
+}
+.contshowscontacto .contshowscontactochild .shows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+.contshowscontacto .contshowscontactochild .shows .logoshows {
+  width: 160px;
+}
 
-    footer p {
-        font-size: 18px;
-    }
-
-    .redesfooter img {
-        width: 32px;
-    }
-
+.contacto {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contacto form .input {
+  background-color: #060606;
+  border: none;
+  border-bottom: 1px solid #C1C0C0;
+  font-family: "IM Fell English SC", serif;
+  font-size: 16px;
+  color: #f5f5f5;
+}
+.contacto form .button {
+  border: none;
+  background-color: #060606;
+  font-family: "IM Fell English SC", serif;
+  font-size: 18px;
+  color: #DFC98E;
 }
 
 /* bio */
-
 .titlepage {
-    margin-top: 10vh;
+  margin-top: 10vh;
 }
 
 .bio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    gap: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  gap: 6vh;
 }
-
+.bio #cardbio1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  max-width: 1000px;
+  gap: 4vh;
+  transition-duration: 0.2s;
+}
+.bio #cardbio1 p {
+  font-size: var(--h3);
+  word-spacing: 3px;
+  line-height: 1.8;
+  white-space: pre-line;
+  transition-duration: 0.2s;
+}
+.bio #cardbio2 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 80vw;
+  max-width: 1000px;
+  gap: 4vh;
+  transition-duration: 0.2s;
+}
+.bio #cardbio2 p {
+  font-size: var(--h3);
+  word-spacing: 3px;
+  line-height: 1.8;
+  white-space: pre-line;
+  transition-duration: 0.2s;
+}
 .bio img {
-    width: 80vw;
-    max-width: 1000px;
-}
-
-#cardbio1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80vw;
-    max-width: 1000px;
-    gap: 4vh;
-    transition-duration: .2s;
-}
-
-#cardbio2 {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 80vw;
-    max-width: 1000px;
-    gap: 4vh;
-    transition-duration: .2s;
-}
-
-#cardbio1 p {
-    font-size: var(--h3);
-    word-spacing: 3px;
-    line-height: 1.8;
-    white-space: pre-line;
-    transition-duration: .2s;
-}
-
-#cardbio2 p {
-    font-size: var(--h3);
-    word-spacing: 3px;
-    line-height: 1.8;
-    white-space: pre-line;
-    transition-duration: .2s;
+  width: 80vw;
+  max-width: 1000px;
 }
 
 /* música */
-
 .mainmusica {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--h2)*2);
-    transition-duration: .2s;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  transition-duration: 0.2s;
 }
-
-.contcarddisco {
-    display: flex;
-    flex-direction: column;
-    gap: 12vw;
-    transition-duration: .2s;
+.mainmusica .contcarddisco {
+  display: flex;
+  flex-direction: column;
+  gap: 12vw;
+  transition-duration: 0.2s;
 }
 
 /* shows */
-
 .contshows {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: calc(var(--h2)*2);
-    transition-duration: .9s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  transition-duration: 0.9s;
 }
-
-.cardshow {
-    display: flex;
-    flex-direction: column;
-    width: 60vw;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 240px;
-    transition-duration: .2s;
+.contshows .cardshow {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 240px;
+  transition-duration: 0.2s;
 }
-
-.place {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.contshows .cardshow .place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.entradas {
-    margin: 3vh;
+.contshows .cardshow .entradas {
+  margin: 3vh;
 }
 
 /* fotos */
-
 .fotosmain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+  width: 100vw;
 }
-
 .fotosmain img {
-    border-radius: 8px;
-    border: 1px solid var(--secondary);
-    width: 80vw;
-    max-width: 1000px;
+  border-radius: 8px;
+  border: 1px solid #C1C0C0;
+  width: 80vw;
+  max-width: 1000px;
 }
-
-.fotos2 {
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    width: 80vw;
-    max-width: 1000px;
+.fotosmain .fotos2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  width: 80vw;
+  max-width: 1000px;
 }
-
-
-.fotos3 {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    width: 80vw;
+.fotosmain .fotos3 {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  width: 80vw;
 }
-
 
 /* contacto */
-
 .contactomain {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 6vh;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 6vh;
 }
-
 .contactomain img {
-    width: 160px;
+  width: 160px;
 }
 
+/* responsive index */
+@media screen and (min-width: 600px) {
+  header {
+    grid-template-areas: "logoheader secciones";
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto;
+    justify-content: space-between;
+  }
+  header .secciones {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    opacity: 1;
+    padding: 0;
+    margin-top: 1rem;
+    background-color: #060606;
+    gap: 20px;
+  }
+  header .secciones a {
+    font-size: 18px;
+  }
+  .hamburguer {
+    display: flex;
+  }
+  .hamburguer .bar-btn {
+    display: none;
+  }
+  body h2 {
+    font-size: 32px;
+  }
+  body h3 {
+    font-size: 24px;
+  }
+  body h4 {
+    font-size: 16px;
+  }
+  body .textbutton {
+    font-size: 24px;
+  }
+  .portada .titleportada {
+    font-size: 24px;
+    top: 10vh;
+    width: 225px;
+  }
+  .musica .discos {
+    flex-direction: row;
+    gap: 6vw;
+  }
+  .musica .discos .carddisco img {
+    width: 40vw;
+    gap: 2vh;
+  }
+  .mainmusica .contcarddisco {
+    flex-direction: row;
+    gap: 6vw;
+  }
+  .mainmusica .carddisco img {
+    width: 40vw;
+    gap: 2vh;
+  }
+  .contshowscontacto .contshowscontactochild {
+    flex-direction: row;
+  }
+  main .contactomain {
+    flex-direction: row;
+    gap: 12vw;
+  }
+  footer #logofooter {
+    height: 56px;
+  }
+  footer p {
+    font-size: 14px;
+  }
+  footer .redesfooter {
+    display: flex;
+    justify-content: space-between;
+    gap: 1vh;
+  }
+  footer .redesfooter img {
+    width: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  header .secciones {
+    gap: 24px;
+  }
+  .portada .titleportada {
+    font-size: 24px;
+    top: 10vh;
+    width: 225px;
+  }
+  .fotos .nosotros .contcardmusico {
+    flex-direction: row;
+  }
+  .fotos .nosotros .contcardmusico .cardmusico img {
+    width: 45vw;
+  }
+  .musica .discos {
+    flex-direction: row;
+  }
+  .musica .discos .carddisco img {
+    width: 40vw;
+    gap: 2vh;
+  }
+}
+@media screen and (min-width: 900px) {
+  header {
+    grid-template-areas: "logoheader secciones redes";
+    grid-template-columns: 29% 49% 20%;
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  header #logo {
+    height: 80px;
+  }
+  header .redes {
+    grid-area: redes;
+    display: flex;
+    gap: 8px;
+  }
+  .portada .titleportada {
+    font-size: 32px;
+    top: 10vh;
+    width: 302px;
+    left: 65%;
+  }
+  .portada #portadaimg {
+    max-width: 1120px;
+  }
+  .carddisco img {
+    width: 300px;
+  }
+  footer #logofooter {
+    transition-duration: 0.2s;
+    height: 56px;
+  }
+  footer p {
+    font-size: 14px;
+  }
+  footer .redesfooter img {
+    width: 24px;
+  }
+  .bio #cardbio1 {
+    flex-direction: row;
+  }
+  .bio #cardbio2 {
+    flex-direction: row;
+  }
+  .contshows .cardshow {
+    flex-direction: row;
+    width: 790px;
+  }
+  .fotosmain .fotos2 {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+  }
+  .fotosmain .fotos2 img {
+    width: 39vw;
+    max-width: 489px;
+  }
+  .fotosmain .fotos3 img {
+    width: 39vw;
+    max-width: 489px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  header {
+    grid-template-columns: 26% 49% 13%;
+  }
+  header .secciones {
+    gap: 32px;
+  }
+  header .secciones a {
+    font-size: 20px;
+  }
+  .fotos .nosotros .contcardmusico .cardmusico img {
+    max-width: 490px;
+  }
+  .carddisco img {
+    width: 360px;
+  }
+  main .contshows {
+    flex-direction: row;
+  }
+  footer #logofooter {
+    height: 80px;
+  }
+  footer p {
+    font-size: 18px;
+  }
+  footer .redesfooter img {
+    width: 32px;
+  }
+}
 @media screen and (min-width: 1440px) {
-
-    header {
-        grid-template-columns: 10% 26% 10%;
-    }
-
-}
+  header {
+    grid-template-columns: 10% 26% 10%;
+  }
+}/*# sourceMappingURL=style.css.map */

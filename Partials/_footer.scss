@@ -1,0 +1,27 @@
+footer p {
+    margin-top: $h4;
+    margin-bottom: $h4;
+}
+
+footer {
+    grid-area: footer;
+    background-color: $primary;
+    bottom: 0;
+    padding-top: calc($h2*3);
+    padding-bottom: $h4;
+    transition-duration: .2s;
+    font-family: 'IM Fell English SC', serif;
+    color: $text;
+
+    p {
+        margin-top: $h4;
+        margin-bottom: $h4;
+    }
+
+    #flexwrapbs {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
