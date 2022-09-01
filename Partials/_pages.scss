@@ -27,6 +27,7 @@
             white-space: pre-line;
             transition-duration: .2s;
         }
+
     }
     
     #cardbio2 {
@@ -50,6 +51,8 @@
     img {
         width: 80vw;
         max-width: 1000px;
+        border: 1px solid $text;
+        border-radius: 8px;
     }
 }
 

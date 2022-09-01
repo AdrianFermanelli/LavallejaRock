@@ -314,8 +314,8 @@ footer #flexwrapbs {
           animation-name: discoshow;
   -webkit-animation-duration: 0.8s;
           animation-duration: 0.8s;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
   max-width: 300px;
 }
 .carddisco img:hover {
@@ -456,6 +456,8 @@ footer #flexwrapbs {
 .bio img {
   width: 80vw;
   max-width: 1000px;
+  border: 1px solid #f5f5f5;
+  border-radius: 8px;
 }
 
 /* música */
