@@ -75,7 +75,8 @@ main {
 header {
   grid-area: header;
   background-color: #060606;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   width: 100vw;
   height: auto;
@@ -203,17 +204,15 @@ footer #flexwrapbs {
 .portada {
   display: flex;
   align-items: center;
-  margin-top: 56px;
 }
 .portada #portadaimg {
-  top: 22px;
   position: relative;
   width: 100%;
 }
 .portada .titleportada {
   position: absolute;
   font-size: 14px;
-  top: 7vh;
+  top: 9vh;
   left: 60%;
   width: 130px;
   text-shadow: 0 0 8Spx #060606;
@@ -664,7 +663,7 @@ footer #flexwrapbs {
   }
   .portada .titleportada {
     font-size: 32px;
-    top: 10vh;
+    top: 17vh;
     width: 302px;
     left: 65%;
   }

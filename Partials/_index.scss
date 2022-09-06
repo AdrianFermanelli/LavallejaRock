@@ -3,10 +3,10 @@
 .portada {
     display: flex;
     align-items: center;
-    margin-top: 56px;
+
 
     #portadaimg {
-        top: $h2;
+
         position: relative;
         width: 100%;
     }
@@ -14,7 +14,7 @@
     .titleportada {
         position: absolute;
         font-size: 14px;
-        top: 7vh;
+        top: 9vh;
         left: 60%;
         width: 130px;
         text-shadow: 0 0 8Spx $primary;

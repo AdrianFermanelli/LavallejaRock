@@ -3,7 +3,7 @@
 header {
     grid-area: header;
     background-color: $primary;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100vw;
     height: auto;
