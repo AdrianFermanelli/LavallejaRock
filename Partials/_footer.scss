@@ -5,13 +5,13 @@ footer p {
 
 footer {
     grid-area: footer;
-    background-color: $primary;
+    background-color: map-get($map: $colors, $key: cprimary);
     bottom: 0;
     padding-top: calc($h2*3);
     padding-bottom: $h4;
     transition-duration: .2s;
     font-family: 'IM Fell English SC', serif;
-    color: $text;
+    color: map-get($map: $colors, $key: ctext);
 
     p {
         margin-top: $h4;

@@ -1,8 +1,7 @@
 /* index */
 
 .portada {
-    display: flex;
-    align-items: center;
+    @include flexcol ($justcont: space-between);
 
 
     #portadaimg {
@@ -17,25 +16,21 @@
         top: 9vh;
         left: 60%;
         width: 130px;
-        text-shadow: 0 0 8Spx $primary;
+        text-shadow: 0 0 8Spx map-get($map: $colors, $key: cprimary);
         z-index: 2;
         transition-duration: .2s;
     }
 }
 
 
-
-
 .video {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
+    @include flexcol ($justcont: space-between);
+    gap: 4vh;
 }
 
 .cardvideo iframe {
     border-radius: 8px;
-    border: 1px solid $text;
+    border: 1px solid map-get($map: $colors, $key: ctext);
     width: 80vw;
     max-width: 930px;
     max-height: 500px;
@@ -44,56 +39,43 @@
 }
 
 .cardvideo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexcol ($justcont: space-between);
     gap: $gapcard;
 }
 
 
-
-
-
 .fotos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6vw;
+    @include flexcol ($justcont: space-between);
+    gap: 4vw;
 
     .nosotros {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexcol ($justcont: space-around);
         gap: $gapcard;
 
         .titulonos {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flexcol ($justcont: space-between);
         }
 
         .contcardmusico {
-            display: flex;
-            flex-direction: column;
-            gap: 2vw;
+            @include flexcol ($justcont: space-around);
+            gap: 4vw;
 
             .cardmusico {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include flexcol ($justcont: center);
                 gap: $gapcard;
 
                 img {
                     width: 80vw;
                     border-radius: 8px;
-                    border: 1px solid $text;
+                    border: 1px solid map-get($map: $colors, $key: ctext);
                     transition-duration: .2s;
                 }
 
                 .textcardmusico {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    @include flexcol ($justcont: center);
+                    h4 {
+                        margin: 0;
+                    }
                 }
             }
         }
@@ -101,27 +83,18 @@
 }
 
 .musica {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexcol ($justcont: center);
     gap: calc($h2*2);
 
     .discos {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexcol ($justcont: center);
         gap: 12vw;
     }
 }
 
 .carddisco {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: $h3;
+    @include flexcol ($justcont: space-between);
+    gap: $h3big;
 
     img {
         width: 60vw;
@@ -132,9 +105,9 @@
         max-width: 300px;
 
         &:hover {
-            transform: scale(1.10);
+            transform: scale(1.17);
             border-radius: 32px;
-            box-shadow: 0 0 $h4 $text;
+            box-shadow: 0 0 $h4 map-get($map: $colors, $key: ctext);
         }
     }
 }
@@ -165,22 +138,16 @@
 
 
 .contshowscontacto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexcol ($justcont: space-between);
     gap: calc($h4*2);
 
     .contshowscontactochild {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexcol ($justcont: space-between);
         gap: 15vw;
         transition-duration: .2s;
 
         .shows {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flexcol ($justcont: space-between);
             gap: $h2;
 
             .logoshows {
@@ -202,20 +169,20 @@
         gap: $h3;
 
         .input {
-            background-color: $primary;
+            background-color: map-get($map: $colors, $key: cprimary );
             border: none;
-            border-bottom: 1px solid $secondary;
+            border-bottom: 1px solid map-get($map: $colors, $key: csecondary);
             font-family: 'IM Fell English SC', serif;
             font-size: $h4;
-            color: $text;
+            color: map-get($map: $colors, $key: ctext);
         }
 
         .button {
             border: none;
-            background-color: $primary;
+            background-color: map-get($map: $colors, $key: cprimary );
             font-family: 'IM Fell English SC', serif;
             font-size: $h3;
-            color: $accent;
+            color: map-get($map: $colors, $key: caccent );
         }
     }
 

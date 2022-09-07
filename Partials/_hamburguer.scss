@@ -20,8 +20,7 @@
     }
 
     .bar-btn {
-        width: 24px;
-        height: 24px;
+        @extend %hambsize;
         position: relative;
         cursor: pointer;
 
@@ -33,14 +32,15 @@
             content: '';
             width: 24px;
             height: 2px;
-            background: $text;
+            background: map-get($map: $colors, $key: ctext);
             border-radius: 3px;
             transition-duration: .2s;
             z-index: 4;
         }
 
         #space {
-            background-color: $primary;
+            background-color: map-get($map: $colors, $key: cprimary);
+            @extend %hambsize;
             top: 6px;
             height: 14px;
             z-index: 3;

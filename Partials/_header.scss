@@ -2,7 +2,7 @@
 
 header {
     grid-area: header;
-    background-color: $primary;
+    background-color: map-get($map: $colors, $key: cprimary);
     position: sticky;
     top: 0;
     width: 100vw;
@@ -20,7 +20,7 @@ header {
     z-index: 4;
     transition-duration: .2s;
     font-family: 'IM Fell English SC', serif;
-    color: $text;
+    color: map-get($map: $colors, $key: ctext);
 
     .logoheader {
         grid-area: logoheader;
@@ -48,7 +48,7 @@ header {
     
         a {
             font-size: $h2;
-            color: $text;
+            color: map-get($map: $colors, $key: ctext);
             text-decoration: none;
             transition-duration: .2s;
     
@@ -64,7 +64,7 @@ header {
         display: none;
     
         & a:hover {
-            border-bottom: 1px solid $secondary;
+            border-bottom: 1px solid map-get($map: $colors, $key: csecondary);
         }
     }
 }

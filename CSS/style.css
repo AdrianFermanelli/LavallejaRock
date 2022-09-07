@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* general */
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap");
+.hamburguer .bar-btn #space, .hamburguer .bar-btn {
+  width: 24px;
+  height: 24px;
+}
+
 * {
   margin: center;
   padding: 0;
@@ -15,7 +20,7 @@ main {
   flex-direction: column;
   align-items: center;
   min-height: 74vh;
-  gap: 5vh;
+  gap: 12vh;
   font-family: "IM Fell English SC", serif;
   color: #f5f5f5;
 }
@@ -38,8 +43,6 @@ main {
   top: 12px;
 }
 .hamburguer .bar-btn {
-  width: 24px;
-  height: 24px;
   position: relative;
   cursor: pointer;
 }
@@ -165,7 +168,6 @@ body h4 {
 
 .textbutton {
   font-size: 18px;
-  line-height: 4px;
   color: #DFC98E;
   transition-duration: 0.2s;
   text-decoration: none;
@@ -203,7 +205,9 @@ footer #flexwrapbs {
 /* index */
 .portada {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 .portada #portadaimg {
   position: relative;
@@ -224,7 +228,8 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2vh;
+  justify-content: space-between;
+  gap: 4vh;
 }
 
 .cardvideo iframe {
@@ -241,6 +246,7 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 2vh;
 }
 
@@ -248,28 +254,34 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6vw;
+  justify-content: space-between;
+  gap: 4vw;
 }
 .fotos .nosotros {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   gap: 2vh;
 }
 .fotos .nosotros .titulonos {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 .fotos .nosotros .contcardmusico {
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4vw;
 }
 .fotos .nosotros .contcardmusico .cardmusico {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2vh;
 }
 .fotos .nosotros .contcardmusico .cardmusico img {
@@ -282,29 +294,33 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+.fotos .nosotros .contcardmusico .cardmusico .textcardmusico h4 {
+  margin: 0;
 }
 
 .musica {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 44px;
 }
 .musica .discos {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 12vw;
 }
 
 .carddisco {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 24px;
 }
 .carddisco img {
   width: 60vw;
@@ -318,7 +334,7 @@ footer #flexwrapbs {
   max-width: 300px;
 }
 .carddisco img:hover {
-  transform: scale(1.1);
+  transform: scale(1.17);
   border-radius: 32px;
   box-shadow: 0 0 16px #f5f5f5;
 }
@@ -362,12 +378,14 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 32px;
 }
 .contshowscontacto .contshowscontactochild {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 15vw;
   transition-duration: 0.2s;
 }
@@ -375,6 +393,7 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 22px;
 }
 .contshowscontacto .contshowscontactochild .shows .logoshows {
@@ -417,6 +436,7 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 100vw;
   gap: 6vh;
 }
@@ -424,6 +444,7 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 80vw;
   max-width: 1000px;
   gap: 4vh;
@@ -438,8 +459,10 @@ footer #flexwrapbs {
 }
 .bio #cardbio2 {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: column-reverse;
   width: 80vw;
   max-width: 1000px;
   gap: 4vh;
@@ -478,17 +501,18 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 44px;
   transition-duration: 0.9s;
 }
 .contshows .cardshow {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 60vw;
   margin-top: 3vh;
   margin-bottom: 3vh;
-  justify-content: space-between;
-  align-items: center;
   min-width: 240px;
   transition-duration: 0.2s;
 }
@@ -496,6 +520,7 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 .contshows .cardshow .entradas {
   margin: 3vh;
@@ -506,6 +531,7 @@ footer #flexwrapbs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 2vh;
   width: 100vw;
 }
@@ -532,8 +558,10 @@ footer #flexwrapbs {
 /* contacto */
 .contactomain {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: column-reverse;
   gap: 6vh;
 }
 .contactomain img {
