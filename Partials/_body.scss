@@ -1,5 +1,6 @@
 
 body {
+    overflow-x: hidden;
     display: grid;
     grid-template-areas:
         "header"
@@ -9,7 +10,6 @@ body {
     grid-template-columns: auto;
     min-height: 100vh;
     background-color: map-get($map: $colors, $key: cprimary);
-
     h2,
     h3,
     h4 {

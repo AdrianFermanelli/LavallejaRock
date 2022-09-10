@@ -136,6 +136,7 @@ header .redes a:hover {
 }
 
 body {
+  overflow-x: hidden;
   display: grid;
   grid-template-areas: "header" "contenido" "footer";
   grid-template-rows: auto auto auto;
