@@ -221,7 +221,7 @@ footer #flexwrapbs {
   top: 9vh;
   left: 60%;
   width: 130px;
-  text-shadow: 0 0 8Spx #060606;
+  text-shadow: -4px 4px 4px #060606;
   z-index: 2;
   transition-duration: 0.2s;
 }
@@ -726,7 +726,7 @@ footer #flexwrapbs {
   .fotosmain .fotos2 {
     display: flex;
     flex-direction: row;
-    gap: 2vw;
+    gap: 1.5vw;
   }
   .fotosmain .fotos2 img {
     width: 39vw;
@@ -769,5 +769,8 @@ footer #flexwrapbs {
 @media screen and (min-width: 1440px) {
   header {
     grid-template-columns: 10% 26% 10%;
+  }
+  .fotosmain .fotos2 {
+    gap: 1vw;
   }
 }/*# sourceMappingURL=style.css.map */

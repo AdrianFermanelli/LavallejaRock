@@ -241,7 +241,7 @@
     .fotosmain .fotos2 {
         display: flex;
         flex-direction: row;
-        gap: 2vw;
+        gap: 1.5vw;
     }
 
     .fotosmain .fotos2 img {
@@ -304,6 +304,10 @@
 
     header {
         grid-template-columns: 10% 26% 10%;
+    }
+
+    .fotosmain .fotos2 {
+        gap: 1vw;
     }
 
 }
