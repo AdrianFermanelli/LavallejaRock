@@ -16,7 +16,7 @@
         top: 9vh;
         left: 60%;
         width: 130px;
-        text-shadow: 0 0 8Spx map-get($map: $colors, $key: cprimary);
+        text-shadow: -4px 4px 4px map-get($map: $colors, $key: cprimary);
         z-index: 2;
         transition-duration: .2s;
     }
