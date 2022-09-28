@@ -64,8 +64,8 @@
 
     .musica {
         .discos {
-        flex-direction: row;
-        gap: 6vw;
+            flex-direction: row;
+            gap: 6vw;
 
             .carddisco img {
                 width: 40vw;
@@ -78,8 +78,8 @@
     .mainmusica {
 
         .contcarddisco {
-        flex-direction: row;
-        gap: 6vw;
+            flex-direction: row;
+            gap: 6vw;
         }
 
         .carddisco img {
@@ -110,7 +110,7 @@
         }
 
 
-         .redesfooter {
+        .redesfooter {
             display: flex;
             justify-content: space-between;
             gap: 1vh;
@@ -185,10 +185,10 @@
     .portada {
 
         .titleportada {
-        font-size: $h2big;
-        top: 17vh;
-        width: 302px;
-        left: 65%;
+            font-size: $h2big;
+            top: 17vh;
+            width: 302px;
+            left: 65%;
         }
 
         #portadaimg {
@@ -283,7 +283,7 @@
         flex-direction: row;
     }
 
-    footer{
+    footer {
 
         #logofooter {
             height: 80px;
@@ -295,7 +295,7 @@
 
         .redesfooter img {
             width: $h2big;
-    }
+        }
     }
 }
 
