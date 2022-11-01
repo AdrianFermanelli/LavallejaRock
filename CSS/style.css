@@ -413,7 +413,7 @@ footer #flexwrapbs {
   flex-direction: column;
   gap: 18px;
 }
-.contacto form .input {
+.contacto form input {
   background-color: #060606;
   border: none;
   border-bottom: 1px solid #C1C0C0;
@@ -421,7 +421,15 @@ footer #flexwrapbs {
   font-size: 16px;
   color: #f5f5f5;
 }
-.contacto form .button {
+.contacto form textarea {
+  background-color: #060606;
+  border: none;
+  border-bottom: 1px solid #C1C0C0;
+  font-family: "IM Fell English SC", serif;
+  font-size: 16px;
+  color: #f5f5f5;
+}
+.contacto form button {
   border: none;
   background-color: #060606;
   font-family: "IM Fell English SC", serif;
@@ -453,7 +461,7 @@ footer #flexwrapbs {
   transition-duration: 0.2s;
 }
 .bio #cardbio1 p {
-  font-size: var(--h3);
+  font-size: 18px;
   word-spacing: 3px;
   line-height: 1.8;
   white-space: pre-line;
@@ -471,7 +479,7 @@ footer #flexwrapbs {
   transition-duration: 0.2s;
 }
 .bio #cardbio2 p {
-  font-size: var(--h3);
+  font-size: 18px;
   word-spacing: 3px;
   line-height: 1.8;
   white-space: pre-line;

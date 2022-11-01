@@ -12,12 +12,16 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <title>Lavalleja y Los Jinetes del Desierto</title>
     <meta name="description" content="Sitio oficial de la banda de rock Lavalleja y los Jinetes del Desierto">
-    <meta name="keywords" content="rock, banda, hard rock, led zeppelin, black sabbath, deep purple, 70s, setentas, hard rock, discos, música"> 
+    <meta name="keywords"
+        content="rock, banda, hard rock, led zeppelin, black sabbath, deep purple, 70s, setentas, hard rock, discos, música">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSD2BJN89H"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-GSD2BJN89H');
@@ -220,14 +224,13 @@
 
                     <h3>Contactate</h3>
 
-                    <form action="">
+                    <form action="https://formspree.io/f/xyyvnrbk" method="POST">
 
-                        <input class="input" type="text" name="nombre" placeholder="Nombre">
-                        <input class="input" type="email" name="mail" placeholder="Mail">
-                        <textarea class="input" name="comentarios" placeholder="Comentarios" id="" cols="30"
-                            rows="10"></textarea>
-                        <input class="button" type="submit" value="Enviar">
-
+                        <input type="name" name="nombre" placeholder="Nombre">
+                        <input type="email" name="email" placeholder="Mail">
+                        <textarea name="mensaje" placeholder="Mensaje" rows="3"></textarea>
+                        <button type="submit">Enviar</button>
+                        
                     </form>
 
                 </div>

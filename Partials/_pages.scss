@@ -17,7 +17,7 @@
         transition-duration: .2s;
 
         p {
-            font-size: var(--h3);
+            font-size: $h3;
             word-spacing: 3px;
             line-height: 1.8;
             white-space: pre-line;
@@ -35,7 +35,7 @@
         transition-duration: .2s;
 
         p {
-            font-size: var(--h3);
+            font-size: $h3;
             word-spacing: 3px;
             line-height: 1.8;
             white-space: pre-line;

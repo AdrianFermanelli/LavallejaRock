@@ -167,8 +167,8 @@
         display: flex;
         flex-direction: column;
         gap: $h3;
-
-        .input {
+        
+        input {
             background-color: map-get($map: $colors, $key: cprimary );
             border: none;
             border-bottom: 1px solid map-get($map: $colors, $key: csecondary);
@@ -177,7 +177,16 @@
             color: map-get($map: $colors, $key: ctext);
         }
 
-        .button {
+        textarea {
+            background-color: map-get($map: $colors, $key: cprimary );
+            border: none;
+            border-bottom: 1px solid map-get($map: $colors, $key: csecondary);
+            font-family: 'IM Fell English SC', serif;
+            font-size: $h4;
+            color: map-get($map: $colors, $key: ctext);
+        }
+
+        button {
             border: none;
             background-color: map-get($map: $colors, $key: cprimary );
             font-family: 'IM Fell English SC', serif;
